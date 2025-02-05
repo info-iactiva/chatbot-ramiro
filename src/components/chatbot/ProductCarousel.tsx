@@ -49,6 +49,9 @@ const forbiddenKeys: (keyof Record)[] = [
   "variantOptions1",
   "variantOptions2",
   "variantOptions3",
+  "seller",
+  "sku",
+  "type",
 ];
 
 const ProductCarousel: React.FC<ProductCarouselProps> = ({ records }) => {

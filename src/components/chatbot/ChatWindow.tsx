@@ -20,14 +20,8 @@ type TChatWindowProps = {
 }
 
 const ChatWindow: React.FC<TChatWindowProps> = ({ messages, isConnected, sendMessage }) => {
-    const [userMessages, setUserMessages] = useState<{ user: string; text: string; records?: Record[] }[]>([
-        {
-            user: "ai",
-            text: "¡Hola! Bienvenido a Dessa Muebles. ¿En qué puedo ayudarte hoy?",
-            records: [],
-        },
-    ]);
-    const [isThinking, setIsThinking] = useState(false);
+    const [userMessages, setUserMessages] = useState<{ user: string; text: string; records?: Record[] }[]>([]);
+    const [isThinking, setIsThinking] = useState(true);
 
     const handleSendMessage = async (message: string) => {
         if (!isConnected) {
@@ -45,10 +39,10 @@ const ChatWindow: React.FC<TChatWindowProps> = ({ messages, isConnected, sendMes
         if (messages) {
             const newMessageObj = messages || { message: "No records available", records: [], status: "" };
             const newMessageText = newMessageObj.message;
-    
+
             console.log("loading records", newMessageObj.records);
-            
-    
+
+
             // Evita duplicados comparando el último mensaje agregado
             if (userMessages[userMessages.length - 1]?.text !== newMessageText) {
                 const newMessage = {
@@ -59,7 +53,7 @@ const ChatWindow: React.FC<TChatWindowProps> = ({ messages, isConnected, sendMes
                 console.log("Creating new message", newMessage, "from: ", newMessageObj);
                 setUserMessages((prev) => [...prev, newMessage]);
             }
-    
+
             setIsThinking(false);
         }
     }, [messages, messages?.records]);
