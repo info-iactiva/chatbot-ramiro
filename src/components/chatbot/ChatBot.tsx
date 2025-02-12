@@ -7,8 +7,8 @@ import UserForm from "./UserForm";
 const Chatbot: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     // Establecer la URL del WebSocket
-    const { messages, isConnected, sendMessage} = useWebSocket("ws://localhost:5000/ws");  // Local
-    // const { messages, isConnected, sendMessage } = useWebSocket("wss://chatbot-go-dessa-production.up.railway.app/ws"); // Production 
+    // const { messages, isConnected, sendMessage} = useWebSocket("ws://localhost:5000/ws");  // Local
+    const { messages, isConnected, sendMessage } = useWebSocket("wss://chatbot-go-ramiro-production.up.railway.app/ws"); // Production 
 
     const [isChatVisible, setIsChatVisible] = useState(false);
 
