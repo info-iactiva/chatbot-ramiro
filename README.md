@@ -39,12 +39,6 @@ El objetivo principal es probar funcionalidades clave y obtener una mejor compre
 
 ---
 
-### 4. **Avatares dinámicos**
-- Generación automática de avatares para el usuario y el bot utilizando la **API de DiceBear**.
-- Cada avatar es único y generado dinámicamente.
-
----
-
 ### 5. **Indicador de carga**
 - Muestra un indicador visual de "pensando" mientras el bot procesa una respuesta.
 

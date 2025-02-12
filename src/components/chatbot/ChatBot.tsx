@@ -7,8 +7,8 @@ import UserForm from "./UserForm";
 const Chatbot: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     // Establecer la URL del WebSocket
-    // const { messages, isConnected, sendMessage} = useWebSocket("ws://192.168.86.223:5000/ws");  // Local
-    const { messages, isConnected, sendMessage } = useWebSocket("wss://chatbot-go-dessa-production.up.railway.app/ws"); // Production 
+    const { messages, isConnected, sendMessage} = useWebSocket("ws://localhost:5000/ws");  // Local
+    // const { messages, isConnected, sendMessage } = useWebSocket("wss://chatbot-go-dessa-production.up.railway.app/ws"); // Production 
 
     const [isChatVisible, setIsChatVisible] = useState(false);
 
@@ -16,8 +16,8 @@ const Chatbot: React.FC = () => {
         setIsChatVisible(true);
         const { name, email } = userData;
         // sendMessage(`name: ${name}, email: ${email}`);
-        sendMessage('Hola, el nombre del usuario es ' + name + ' y su correo es ' + email + ', y su número de teléfono es ' + userData.tel);
-        console.log(`name: ${name}, email: ${email} y teléfono: ${userData.tel}`);
+        sendMessage('El nombre del usuario es ' + name + ' y su correo es ' + email + ', y su número de teléfono es ' + userData.tel);
+        // console.log(`name: ${name}, email: ${email} y teléfono: ${userData.tel}`);
 
     };
 

@@ -63,7 +63,7 @@ const UserForm: React.FC<UserFormProps> = ({ onFormSubmit }) => {
                 </div>
                 <button
                     type="submit"
-                    className="w-full bg-primary text-white p-2 rounded-lg hover:bg-purple-700"
+                    className="w-full bg-primary text-white p-2 rounded-lg hover:bg-primaryDark"
                 >
                     Iniciar chat
                 </button>

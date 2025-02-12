@@ -10,7 +10,7 @@ interface QuickRepliesProps {
           <button
             key={index}
             onClick={() => onReply(reply)}
-            className="bg-primary text-white px-4 py-1 rounded-lg hover:bg-purple-700"
+            className="bg-primary text-white px-4 py-1 rounded-lg hover:bg-primaryDark"
           >
             {reply}
           </button>

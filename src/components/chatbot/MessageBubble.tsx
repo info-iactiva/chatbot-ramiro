@@ -1,8 +1,7 @@
 import React from "react";
 import MarkdownIt from 'markdown-it';
-
 interface MessageBubbleProps {
-  user: string; 
+  user: string;
   text: string;
 }
 
@@ -10,35 +9,32 @@ const md = new MarkdownIt();
 
 const MessageBubble: React.FC<MessageBubbleProps> = ({ user, text }) => {
   const isUser = user === "human";
-  const avatarUrl = isUser
-    ? `https://api.dicebear.com/6.x/avataaars/svg?seed=User`
-    : `https://api.dicebear.com/6.x/avataaars/svg?seed=Bot`;
 
-    const renderedHTML = md.render(text); // Convierte Markdown a HTML
+  const renderedHTML = md.render(text); // Convierte Markdown a HTML
 
   return (
     <div className={`flex items-start ${isUser ? "justify-end" : "justify-start"} space-x-2`}>
-      {!isUser && (
+      {/* {!isUser && (
         <img
-          src={avatarUrl}
+          src={svgBotIcon}
           alt="Bot avatar"
           className="w-8 h-8 rounded-full"
         />
-      )}
+      )} */}
       <div
         className={`${isUser ? "bg-user text-black" : "bg-bot text-black"
           } p-3 rounded-lg max-w-xs shadow-md`}
-           dangerouslySetInnerHTML={{ __html: renderedHTML }}
+        dangerouslySetInnerHTML={{ __html: renderedHTML }}
       >
         {/* {text} */}
       </div>
-      {isUser && (
+      {/* {isUser && (
         <img
-          src={avatarUrl}
+          src={svgUserIcon}
           alt="User avatar"
           className="w-8 h-8 rounded-full"
         />
-      )}
+      )} */}
     </div>
   );
 };

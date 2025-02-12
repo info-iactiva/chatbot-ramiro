@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from "react";
-import ChatbotIcon from "../../assets/chatbotIcon.gif"
+import ChatbotIcon from "../../assets/svg/botIcon.svg";
+// import ChatbotIcon from "../../assets/chatbotIcon.gif"
 interface ChatButtonProps {
   onClick: () => void;
   isOpen: boolean;
@@ -28,11 +29,13 @@ const ChatButton: React.FC<ChatButtonProps> = ({ onClick, isOpen }) => {
   return (
     <button
       onClick={onClick}
-      className={`fixed bottom-12 right-8 bg-primary w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-transform duration-400  ${isOpen ? "rotate-45" : "rotate-0"
+      className={`fixed bottom-10 right-6 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-transform duration-400  ${isOpen ? "rotate-45" : "rotate-0"
         }`}
     >
       {isOpen ?
-        <span className="text-white">✕</span>
+        <div className="w-full h-full bg-red-500 rounded-full flex items-center justify-center">
+          <span className="text-white">✕</span>
+        </div>
         :
         <Fragment>
           {
@@ -47,14 +50,20 @@ const ChatButton: React.FC<ChatButtonProps> = ({ onClick, isOpen }) => {
                   />
                   <span className="font-bold text-lg">Ivonne</span>
                 </div>
-                <button className="text-black font-bold hover:text-gray-600" onClick={(e) => { e.stopPropagation(); setShowTooltip(false) }}>✕</button>
+                <button className=" text-black font-bold hover:text-gray-600" onClick={(e) => { e.stopPropagation(); setShowTooltip(false) }}>✕</button>
               </div>
               <p className="text-gray-700 mt-2" >
                 ¡Hola! Soy tu asistente Ivonne, ¿en qué puedo ayudarte?
               </p>
             </div>
           }
-          <img src={ChatbotIcon} alt="" className="w-full h-full object-cover rounded-full scale-150" />
+
+          <img
+            src={ChatbotIcon}
+            alt=""
+            className="w-full h-full object-cover rounded-full scale-150 animate-[bounce_2s_infinite]"
+          />
+
         </Fragment>
       }
 
