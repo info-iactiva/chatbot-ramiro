@@ -5,7 +5,6 @@ import MessageBubble from "./MessageBubble";
 import ChatInput from "./ChatInput";
 import BotThinking from "./BotThinking";
 // import QuickReplies from "./QuickReplies";
-import ProductCarousel from "./ProductCarousel";
 import { Record } from '../../types/Record';
 
 import chatbotIcon from "../../assets/svg/botIcon.svg";
